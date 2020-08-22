@@ -1,1 +1,2 @@
-{"mongoURL":"mongodb+srv://admin:admin@devbook.rvmnl.mongodb.net/test?retryWrites=true&w=majority"}
+{"mongoURL":"mongodb+srv://admin:admin@devbook.rvmnl.mongodb.net/test?retryWrites=true&w=majority",
+"jwtSecret":"mySecretToken"}
