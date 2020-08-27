@@ -4,6 +4,8 @@ import Navbar from "./components/layout/Navbar";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Landing from "./components/layout/Landing";
+import Dashboard from "./components/dashboard/Dashboard";
+import PrivateRoute from "./components/routing/PrivateRoute";
 import "./App.css";
 //Redux imports
 import { Provider } from "react-redux";
@@ -30,6 +32,10 @@ const App = () => {
             <Switch>
               <Route path="/register" component={Register}></Route>
               <Route path="/login" component={Login}></Route>
+              <PrivateRoute
+                path="/Dashboard"
+                component={Dashboard}
+              ></PrivateRoute>
             </Switch>
           </section>
         </Fragment>
