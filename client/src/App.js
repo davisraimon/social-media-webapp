@@ -6,6 +6,7 @@ import Register from "./components/auth/Register";
 import Landing from "./components/layout/Landing";
 import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/routing/PrivateRoute";
+import CreateProfile from "./components/profile-form/CreateProfile";
 import "./App.css";
 //Redux imports
 import { Provider } from "react-redux";
@@ -35,6 +36,10 @@ const App = () => {
               <PrivateRoute
                 path="/Dashboard"
                 component={Dashboard}
+              ></PrivateRoute>
+              <PrivateRoute
+                path="/create-profile"
+                component={CreateProfile}
               ></PrivateRoute>
             </Switch>
           </section>
