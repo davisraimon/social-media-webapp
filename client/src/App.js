@@ -7,6 +7,9 @@ import Landing from "./components/layout/Landing";
 import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import CreateProfile from "./components/profile-form/CreateProfile";
+import EditProfile from "./components/profile-form/EditProfile";
+import AddExperience from "./components/profile-form/AddExperience";
+import AddEducation from "./components/profile-form/AddEducation";
 import "./App.css";
 //Redux imports
 import { Provider } from "react-redux";
@@ -40,6 +43,18 @@ const App = () => {
               <PrivateRoute
                 path="/create-profile"
                 component={CreateProfile}
+              ></PrivateRoute>
+              <PrivateRoute
+                path="/edit-profile"
+                component={EditProfile}
+              ></PrivateRoute>
+              <PrivateRoute
+                path="/add-experience"
+                component={AddExperience}
+              ></PrivateRoute>
+              <PrivateRoute
+                path="/add-education"
+                component={AddEducation}
               ></PrivateRoute>
             </Switch>
           </section>

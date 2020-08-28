@@ -68,7 +68,9 @@ router.post(
     if (status) profileFields.status = status;
     if (githubusername) profileFields.githubusername = githubusername;
     if (skills) {
-      profileFields.skills = skills.split(",").map((skill) => skill.trim());
+      profileFields.skills = Array.isArray(skills)
+        ? skills
+        : skills.split(",").map((skill) => " " + skill.trim());
     }
     //Build Social Array
     profileFields.social = {};
@@ -76,7 +78,7 @@ router.post(
     if (twitter) profileFields.social.twitter = twitter;
     if (facebook) profileFields.social.facebook = facebook;
     if (linkedin) profileFields.social.linkedin = linkedin;
-    if (instagram) profileFields.social.youtube = instagram;
+    if (instagram) profileFields.social.instagram = instagram;
     try {
       let profile = await Profile.findOne({ user: req.user.id });
       if (profile) {
