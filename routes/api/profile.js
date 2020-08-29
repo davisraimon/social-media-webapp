@@ -6,6 +6,7 @@ const auth = require("../../middleware/auth");
 const { check, validationResult } = require("express-validator");
 const User = require("../../models/User");
 const Profile = require("../../models/Profile");
+const Post = require("../../models/Post");
 const { request } = require("express");
 const axios = require("axios");
 
@@ -138,6 +139,7 @@ router.get("/user/:user_id", async (req, res) => {
 //@access Private
 router.delete("/", auth, async (req, res) => {
   try {
+    await Post.deleteMany({ user: req.user.id });
     await Profile.findOneAndRemove({ user: req.user.id });
     await User.findOneAndRemove({ _id: req.user.id });
     res.json({ msg: "User Deleted" });
@@ -189,7 +191,7 @@ router.put(
 //@route  DELETE api/profile/experience/:exp_id
 //@desc   Delete profile experience
 //@access Private
-router.all("/experience/:exp_id", auth, async (req, res) => {
+router.delete("/experience/:exp_id", auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({
       user: req.user.id,
@@ -199,6 +201,9 @@ router.all("/experience/:exp_id", auth, async (req, res) => {
       .indexOf(req.params.exp_id);
 
     profile.experience.splice(removeIndex, 1);
+    profile.experience = profile.experience.filter(
+      (exp) => exp._id.toString() !== req.params.exp_id
+    );
     await profile.save();
     res.json(profile);
   } catch (err) {

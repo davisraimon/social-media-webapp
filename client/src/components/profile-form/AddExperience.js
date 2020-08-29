@@ -11,7 +11,7 @@ const AddExperience = ({ addExperience, history }) => {
     location: "",
     from: "",
     to: "",
-    current: "",
+    current: false,
     description: "",
   });
   const onChange = (e) => {
@@ -32,7 +32,6 @@ const AddExperience = ({ addExperience, history }) => {
         className="form"
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(formData);
           addExperience(formData, history);
         }}
       >

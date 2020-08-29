@@ -11,7 +11,7 @@ const AddEducation = ({ addEducation, history }) => {
     fieldofstudy: "",
     from: "",
     to: "",
-    current: "",
+    current: "false",
     description: "",
   });
   const onChange = (e) => {
@@ -91,7 +91,7 @@ const AddEducation = ({ addEducation, history }) => {
                 toggleDisabled(!toDateDisabled);
               }}
             />{" "}
-            Current Job
+            Current School
           </p>
         </div>
         <div className="form-group">

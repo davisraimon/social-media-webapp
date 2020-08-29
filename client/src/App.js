@@ -10,6 +10,7 @@ import CreateProfile from "./components/profile-form/CreateProfile";
 import EditProfile from "./components/profile-form/EditProfile";
 import AddExperience from "./components/profile-form/AddExperience";
 import AddEducation from "./components/profile-form/AddEducation";
+import Profiles from "./components/profiles/Profiles"
 import "./App.css";
 //Redux imports
 import { Provider } from "react-redux";
@@ -34,26 +35,27 @@ const App = () => {
           <section className="container">
             <Alert />
             <Switch>
-              <Route path="/register" component={Register}></Route>
-              <Route path="/login" component={Login}></Route>
+              <Route exact path="/register" component={Register}></Route>
+              <Route exact path="/login" component={Login}></Route>
+              <Route exact path='/profiles' component={Profiles}></Route>
               <PrivateRoute
-                path="/Dashboard"
+                exact path="/Dashboard"
                 component={Dashboard}
               ></PrivateRoute>
               <PrivateRoute
-                path="/create-profile"
+                exact path="/create-profile"
                 component={CreateProfile}
               ></PrivateRoute>
               <PrivateRoute
-                path="/edit-profile"
+                exact path="/edit-profile"
                 component={EditProfile}
               ></PrivateRoute>
               <PrivateRoute
-                path="/add-experience"
+                exact path="/add-experience"
                 component={AddExperience}
               ></PrivateRoute>
               <PrivateRoute
-                path="/add-education"
+                exact path="/add-education"
                 component={AddEducation}
               ></PrivateRoute>
             </Switch>
