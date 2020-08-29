@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
+import logo from "./logo.jpg";
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setformData] = useState({
@@ -30,13 +31,16 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   return (
     <Fragment>
       <div style={{ width: 400, margin: "auto" }}>
-        <h1 className="large text-primary">Sign Up</h1>
-        <p className="lead">
+        <div className="logo-div">
+          <img src={logo} className="logo-size"></img>
+        </div>
+        <p className="lead text-center">
           <i className="fas fa-user"></i> Create Your Account
         </p>
         <form className="form" onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <input
+              className="input-field"
               type="text"
               placeholder="Name"
               name="name"
@@ -46,6 +50,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           </div>
           <div className="form-group">
             <input
+              className="input-field"
               type="email"
               placeholder="Email Address"
               name="email"
@@ -53,12 +58,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               onChange={(e) => onChange(e)}
             />
             <small className="form-text">
-              This site uses Gravatar so if you want a profile image, use a
-              Gravatar email
+              This site uses Gravatar  So use Gravatar email for profile image
             </small>
           </div>
           <div className="form-group">
             <input
+              className="input-field"
               type="password"
               placeholder="Password"
               name="password"
@@ -68,6 +73,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           </div>
           <div className="form-group">
             <input
+              className="input-field"
               type="password"
               placeholder="Confirm Password"
               name="password2"
@@ -76,9 +82,13 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               onChange={(e) => onChange(e)}
             />
           </div>
-          <input type="submit" className="btn btn-primary" value="Register" />
+          <input
+            type="submit"
+            className="btn btn-default width-400"
+            value="Register"
+          />
         </form>
-        <p className="my-1">
+        <p className="my-1 text-center">
           Already have an account? <Link to="/login">Sign In</Link>
         </p>
       </div>

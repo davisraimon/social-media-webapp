@@ -59,8 +59,8 @@ router.post(
       instagram,
       linkedin,
     } = req.body;
-    //Build Profile Object
 
+    //Build Profile Object
     profileFields.user = req.user.id;
     if (company) profileFields.company = company;
     if (website) profileFields.website = website;
@@ -295,7 +295,6 @@ router.get("/github/:username", async (req, res) => {
     if (!response) {
       res.status(401).send({ msg: "No Github Profile found" });
     }
-    console.log(response);
     res.json(response.data);
   } catch (err) {
     console.log(err);

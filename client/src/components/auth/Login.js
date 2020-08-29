@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../../actions/auth";
+import logo from './logo.jpg'
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setformData] = useState({
@@ -24,16 +25,17 @@ const Login = ({ login, isAuthenticated }) => {
   }
   return (
     <Fragment>
-      <div style={{ width: 400, margin: "auto" }}>
-        <h1 className="large text-primary">Sign In</h1>
-        <p className="lead">
+      <div style={{ width: 400, margin: "auto" }} className="login-page">
+        {/* <h1 className="large text-primary">Sign In</h1> */}
+        <div className='logo-div'><img src={logo} className='logo-size'></img></div>
+        <p className="lead text-center">
           <i className="fas fa-user"></i> Sign into Your Account
         </p>
         <form className="form" onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <input
               type="email"
-              className="form-control"
+              className="form-control input-field"
               placeholder="Email Address"
               name="email"
               value={email}
@@ -42,7 +44,7 @@ const Login = ({ login, isAuthenticated }) => {
           </div>
           <div className="form-group">
             <input
-              className="form-control"
+              className="form-control input-field"
               type="password"
               placeholder="Password"
               name="password"
@@ -51,9 +53,13 @@ const Login = ({ login, isAuthenticated }) => {
               onChange={(e) => onChange(e)}
             />
           </div>
-          <input type="submit" className="btn btn-primary" value="Login" />
+          <input
+            type="submit"
+            className="btn btn-default width-400"
+            value="Login"
+          />
         </form>
-        <p className="my-1">
+        <p className="my-1 text-center">
           Don't have an account? <Link to="/register">Sign Up</Link>
         </p>
       </div>
