@@ -25,7 +25,7 @@ const Login = ({ login, isAuthenticated }) => {
   }
   return (
     <Fragment>
-      <div style={{ width: 400, margin: "auto" }} className="login-page">
+      <div style={{ width: 400, margin: "auto" }}>
         {/* <h1 className="large text-primary">Sign In</h1> */}
         <div className='logo-div'><img src={logo} className='logo-size'></img></div>
         <p className="lead text-center">

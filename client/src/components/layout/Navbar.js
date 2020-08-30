@@ -8,6 +8,9 @@ export const Navbar = ({ auth, logout }) => {
   const authLinks = (
     <ul>
       <li>
+        <Link to="/posts">Feed</Link>
+      </li>
+      <li>
         <Link to="/profiles">Developers</Link>
       </li>
       <li>
@@ -17,10 +20,10 @@ export const Navbar = ({ auth, logout }) => {
         </Link>
       </li>
       <li>
-        <a onClick={logout}>
+        <Link onClick={logout}>
           <i className="fas fa-sign-out-alt"></i>{" "}
           <span className="hide-sm">Logout</span>
-        </a>
+        </Link>
       </li>
     </ul>
   );

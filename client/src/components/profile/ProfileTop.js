@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Card from "@material-ui/core/Card";
 
 const ProfileTop = ({
   profile: {
@@ -13,8 +14,9 @@ const ProfileTop = ({
 }) => {
   return (
     <>
-      <div className="profile-top bg-primary p-2">
-        <img className="round-img my-1" src={avatar} alt="" />
+      <Card className="profile-top p-2 profile-top-card">
+        <img className=" my-1 profile-top-logo" src={avatar} alt="" />
+
         <h1 className="large">{name}</h1>
         <p className="lead">
           {status} at {company && <span>at {company}</span>}
@@ -56,7 +58,7 @@ const ProfileTop = ({
             </a>
           )}
         </div>
-      </div>
+      </Card>
     </>
   );
 };

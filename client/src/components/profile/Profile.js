@@ -9,6 +9,7 @@ import ProfileAbout from "./ProfileAbout";
 import ProfileExperience from "./ProfileExperience";
 import ProfileEducation from "./ProfileEducation";
 import ProfileGitHub from "./ProfileGitHub";
+import Card from "@material-ui/core/Card";
 
 const Profile = ({
   getProfileById,
@@ -40,7 +41,7 @@ const Profile = ({
           <div className="profile-grid my-1">
             <ProfileTop profile={profile}></ProfileTop>
             <ProfileAbout profile={profile}></ProfileAbout>
-            <div className="profile-exp bg-white p-2">
+            <Card className="profile-exp p-2">
               <h2>Experience</h2>
               {profile.experience.length > 0 ? (
                 <>
@@ -54,8 +55,8 @@ const Profile = ({
               ) : (
                 <h4>No experiences added</h4>
               )}
-            </div>
-            <div className="profile-edu bg-white p-2">
+            </Card>
+            <Card className="profile-edu p-2">
               <h2>Education</h2>
               {profile.education.length > 0 ? (
                 <>
@@ -69,7 +70,7 @@ const Profile = ({
               ) : (
                 <h4>No education added</h4>
               )}
-            </div>
+            </Card>
             {profile.githubusername && (
               <ProfileGitHub username={profile.githubusername}></ProfileGitHub>
             )}

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getGithubRepos } from "../../actions/profile";
 import Spinner from "../layout/Spinner";
+import Card from "@material-ui/core/Card";
 
 const ProfileGitHub = ({ username, getGithubRepos, repos }) => {
   useEffect(() => {
@@ -17,7 +18,7 @@ const ProfileGitHub = ({ username, getGithubRepos, repos }) => {
           <Spinner></Spinner>
         ) : (
           repos.map((repo) => (
-            <div key={repo._id} className="repo bg-white p-1 my-1">
+            <Card key={repo._id} className="repo repo-color p-1 my-1">
               <div>
                 <h4>
                   <a href={repo.html_url} rel="noopener nooreferrer">
@@ -48,7 +49,7 @@ const ProfileGitHub = ({ username, getGithubRepos, repos }) => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </Card>
           ))
         )}
       </div>

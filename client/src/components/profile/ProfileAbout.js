@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Card from "@material-ui/core/Card";
 
 const ProfileAbout = ({
   profile: {
@@ -9,7 +10,7 @@ const ProfileAbout = ({
   },
 }) => (
   <>
-    <div className="profile-about bg-light p-2">
+    <Card className="profile-about p-2">
       {bio && (
         <>
           <h2 className="text-primary">{name.trim().split(' ')[0]}'s Bio</h2>
@@ -25,7 +26,7 @@ const ProfileAbout = ({
           </div>
         ))}
       </div>
-    </div>
+    </Card>
   </>
 );
 

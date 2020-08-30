@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
-import Card from '@material-ui/core/Card';
+import Card from "@material-ui/core/Card";
 
 const ProfileItem = ({
   profile: {
@@ -33,16 +33,24 @@ const ProfileItem = ({
           {location && <span>{location}</span>}
         </Typography>
         <br />
-        <Link to={`/profile/${_id}`} className="btn btn-primary">
+        <Link
+          to={`/profile/${_id}`}
+          className="btn btn-light"
+          style={{ marginTop: 8 }}
+        >
           View profile
         </Link>
-        <Link to={`/profile/${_id}`} className="btn btn-primary">
+        <Link
+          to={`/profile/${_id}`}
+          className="btn btn-light"
+          style={{ marginTop: 8 }}
+        >
           <i class="fa fa-envelope" aria-hidden="true"></i> Connect
         </Link>
       </div>
       <ul>
         {skills.splice(0, 4).map((skill, index) => (
-          <li key={index} className="text-primary">
+          <li key={index}>
             <i className="fas fa-check"> {skill}</i>
           </li>
         ))}

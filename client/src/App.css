@@ -5,7 +5,7 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #81c784;
-  --hover-color: #EEEEEE;
+  --hover-color: #eeeeee;
 }
 .width-400 {
   width: 400px;
@@ -27,10 +27,19 @@
   border-radius: 8px;
 }
 .card:hover {
-  background-color: var(--hover-color);;
+  background-color: var(--hover-color);
 }
-.text-cursive{
+.text-cursive {
   font-family: sans-serif;
+}
+.profile-top-logo {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+.profile-top-card {
+  height: 400px;
+  background-color: var(--hover-color) !important;
 }
 * {
   box-sizing: border-box;
@@ -407,11 +416,11 @@ button {
 }
 
 .profile-top img {
-  width: 250px;
+  width: 150px;
 }
 
 .profile-top .icons a {
-  color: #fff;
+  color: var(--dark-color);
   margin: 0 0.3rem;
 }
 
@@ -422,6 +431,7 @@ button {
 .profile-about {
   grid-area: about;
   text-align: center;
+  background-color: var(--hover-color) !important;
 }
 
 .profile-about .skills {
@@ -433,10 +443,12 @@ button {
 
 .profile-exp {
   grid-area: exp;
+  background-color: var(--hover-color) !important;
 }
 
 .profile-edu {
   grid-area: edu;
+  background-color: var(--hover-color) !important;
 }
 
 .profile-exp h2,
@@ -467,6 +479,9 @@ button {
 
 .profile-github .repo {
   display: flex;
+}
+.repo-color{
+  background-color: var(--hover-color) !important;
 }
 
 .profile-github .repo > div:first-child {
