@@ -41,6 +41,18 @@
   height: 400px;
   background-color: var(--hover-color) !important;
 }
+.align-center {
+  text-align: center;
+}
+.post-likes {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  padding-top: 8px;
+}
+.post-like-button-clicked {
+  color: #81d4fa;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -69,6 +81,7 @@ img {
 }
 
 /* Utilities */
+
 .container {
   max-width: 1100px;
   margin: auto;
@@ -480,7 +493,7 @@ button {
 .profile-github .repo {
   display: flex;
 }
-.repo-color{
+.repo-color {
   background-color: var(--hover-color) !important;
 }
 
