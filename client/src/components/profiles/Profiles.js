@@ -17,7 +17,7 @@ const Profiles = ({ getProfiles, profile: { profiles }, loading }) => {
         <>
           <h1 className="large-text-primary">Developers</h1>
           <p className="lead text-cursive">
-            <i class="fa fa-handshake-o" aria-hidden="true"></i> Browse and
+            <i className="fa fa-handshake-o" aria-hidden="true"></i> Browse and
             connect with developers
           </p>
           <div className="profiles">

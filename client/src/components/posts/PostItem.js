@@ -9,6 +9,7 @@ import { deletePost } from "../../actions/post";
 
 const PostItem = ({
   auth,
+  showActions,
   post: { _id, text, name, avatar, user, likes, comments, date },
   addLike,
   removeLike,
@@ -34,15 +35,22 @@ const PostItem = ({
   };
   //change color if liked
   useEffect(() => {
-    if (auth.user !== null) {
+    if (auth.user !== null && showActions) {
       setLikeButtonColor();
     }
   }, []);
   return (
     <>
-      <Card className="post p-1 my-1">
+      <Card
+        className="post p-1 my-1"
+        onDoubleClick={() => {
+          if (showActions) {
+            callLikeActions();
+          }
+        }}
+      >
         <div>
-          <Link to="/profile">
+          <Link to={`/profile/${user}`}>
             <img className="round-img" src={avatar} alt="" />
             <h4>{name}</h4>
           </Link>
@@ -52,46 +60,52 @@ const PostItem = ({
           <p className="post-date">
             Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
           </p>
-          <button
-            type="button"
-            className="btn btn-light"
-            onClick={() => {
-              callLikeActions();
-            }}
-          >
-            <i className={`fas fa-thumbs-up ${likeState}`}></i>
-          </button>
-          <Link
-            to={`/post/${_id}`}
-            className="btn btn-primary align-center"
-            style={{ width: 160 }}
-          >
-            Discussion{" "}
-            {comments.length > 0 && (
-              <span className="comment-count">{comments.length}</span>
-            )}
-          </Link>
-          {!auth.loading && user === auth.user._id && (
-            <button
-              type="button"
-              className="btn btn-danger"
-              onClick={() => deletePost(_id)}
-            >
-              <i className="fas fa-times"></i>
-            </button>
+          {showActions && (
+            <>
+              <button
+                type="button"
+                className="btn btn-light"
+                onClick={() => {
+                  callLikeActions();
+                }}
+              >
+                <i className={`fas fa-thumbs-up ${likeState}`}></i>
+              </button>
+              <Link
+                to={`/post/${_id}`}
+                className="btn btn-primary align-center"
+                style={{ width: 160 }}
+              >
+                Discussion{" "}
+                {comments.length > 0 && (
+                  <span className="comment-count">{comments.length}</span>
+                )}
+              </Link>
+              {!auth.loading && user === auth.user._id && (
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={() => deletePost(_id)}
+                >
+                  <i className="fas fa-times"></i>
+                </button>
+              )}
+              <p className="post-likes">
+                <span>
+                  {likes.length > 0 ? likes.length : ""}
+                  {likes.length > 0 ? " Likes" : ""}{" "}
+                </span>
+              </p>
+            </>
           )}
-          <p className="post-likes">
-            <span>
-              {likes.length > 0 ? likes.length : ""}
-              {likes.length > 0 ? " Likes" : ""}{" "}
-            </span>
-          </p>
         </div>
       </Card>
     </>
   );
 };
-
+PostItem.defaultProps = {
+  showActions: true,
+};
 PostItem.propTypes = {
   auth: PropTypes.object.isRequired,
   post: PropTypes.object.isRequired,
