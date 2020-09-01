@@ -53,6 +53,13 @@
 .post-like-button-clicked {
   color: #81d4fa;
 }
+.border-radius {
+  border-radius: 8px;
+}
+.comment-section-padding{
+  margin-left: 64px !important;
+  margin-right: 64px !important;
+}
 * {
   box-sizing: border-box;
   margin: 0;

@@ -7,7 +7,7 @@ const PostForm = ({ addPost }) => {
   const [text, setText] = useState("");
   return (
     <div class="post-form">
-      <div class="bg-primary p">
+      <div class="bg-primary p border-radius">
         <h3>Say Something...</h3>
       </div>
       <form
@@ -19,6 +19,7 @@ const PostForm = ({ addPost }) => {
         }}
       >
         <textarea
+          className="border-radius"
           name="text"
           cols="30"
           rows="5"
