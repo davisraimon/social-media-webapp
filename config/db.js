@@ -1,6 +1,6 @@
+const de = require("dotenv").config();
 const mongoose = require("mongoose");
 const config = require("config");
-// const db = config.get("mongoURL");
 const db = process.env.mongoURL;
 
 const connectDB = async () => {
