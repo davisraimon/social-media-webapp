@@ -14,6 +14,7 @@ import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
 import Posts from "./components/posts/Posts";
 import Post from "./components/post/Post";
+import NotFound from "./components/layout/NotFound"
 import "./App.css";
 //Redux imports
 import { Provider } from "react-redux";
@@ -73,6 +74,7 @@ const App = () => {
                 component={Posts}
               ></PrivateRoute>
               <PrivateRoute exact path="/post/:id" component={Post}></PrivateRoute>
+              <Route component={NotFound}/>
             </Switch>
           </section>
         </Fragment>
