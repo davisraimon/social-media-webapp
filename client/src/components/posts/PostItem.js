@@ -42,7 +42,7 @@ const PostItem = ({
   return (
     <>
       <Card
-        className="post p-1 my-1"
+        className="post p-1 my post"
         onDoubleClick={() => {
           if (showActions) {
             callLikeActions();

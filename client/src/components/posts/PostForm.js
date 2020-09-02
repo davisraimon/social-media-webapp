@@ -11,7 +11,7 @@ const PostForm = ({ addPost }) => {
         <h3>Say Something...</h3>
       </div>
       <form
-        class="form my-1"
+        class="form my"
         onSubmit={(e) => {
           e.preventDefault();
           addPost({ text });
@@ -28,7 +28,7 @@ const PostForm = ({ addPost }) => {
           value={text}
           onChange={(e) => setText(e.target.value)}
         ></textarea>
-        <input type="submit" class="btn btn-dark my-1" value="Submit" />
+        <input type="submit" class="btn btn-dark my" value="Post" />
       </form>
     </div>
   );

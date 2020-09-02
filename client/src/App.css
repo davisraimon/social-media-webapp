@@ -26,10 +26,14 @@
 .alert-div {
   border-radius: 8px;
 }
+
 .card:hover {
   background-color: var(--hover-color);
 }
 .repo:hover {
+  background-color: var(--hover-color);
+}
+.post:hover {
   background-color: var(--hover-color);
 }
 .text-cursive {
@@ -106,7 +110,7 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
+  margin-top: 4.3rem;
   /* margin-bottom: 3rem; */
 }
 

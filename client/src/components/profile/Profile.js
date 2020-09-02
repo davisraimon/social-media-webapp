@@ -26,7 +26,7 @@ const Profile = ({
         <Spinner></Spinner>
       ) : (
         <>
-          <Link to="/profiles" className="btn btn-light">
+          <Link to="/profiles" className="btn btn-light top-mar-8">
             <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to profiles
           </Link>
           {auth.isAuthenticated &&

@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { deleteAccount } from "../../actions/profile";
+import { connect } from "react-redux";
 
-const DashboardActions = () => {
+const DashboardActions = ({ deleteAccount }) => {
   return (
     <>
       <div className="dash-buttons">
@@ -14,8 +16,16 @@ const DashboardActions = () => {
         <Link to="/add-education" className="btn btn-light">
           <i className="fas fa-graduation-cap"></i> Add Education
         </Link>
+        <button
+          className="btn btn-danger"
+          onClick={() => {
+            deleteAccount();
+          }}
+        >
+          <i className="fas fa-user"></i> Delete Account
+        </button>
       </div>
     </>
   );
 };
-export default DashboardActions;
+export default connect(null, { deleteAccount })(DashboardActions);
