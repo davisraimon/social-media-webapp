@@ -1,0 +1,4 @@
+{"mongoURL":"mongodb+srv://admin:admin@devbook.rvmnl.mongodb.net/test?retryWrites=true&w=majority",
+"jwtSecret":"mySecretToken",
+"githubClientId":"42353bba29d686fcb4f6",
+"githubSecret":"7c8ea769d046ed12ac2b8776f3ad775b7bee9205"}
