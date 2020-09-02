@@ -30,7 +30,7 @@ const AddEducation = ({ addEducation, history }) => {
 
   return (
     <>
-      <h1 className="large text-primary">Add An Education</h1>
+      {/* <h3>Add An Education</h3> */}
       <p className="lead">
         <i className="fas fa-code-branch"></i> Add any school/Bootcamp
       </p>

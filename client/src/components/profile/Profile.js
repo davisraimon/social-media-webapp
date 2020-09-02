@@ -38,7 +38,7 @@ const Profile = ({
           ) : (
             <></>
           )}
-          <div className="profile-grid my-1">
+          <div className="profile-grid my">
             <ProfileTop profile={profile}></ProfileTop>
             <ProfileAbout profile={profile}></ProfileAbout>
             <Card className="profile-exp p-2">

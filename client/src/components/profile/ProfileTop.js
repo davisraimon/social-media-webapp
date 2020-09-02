@@ -17,8 +17,8 @@ const ProfileTop = ({
       <Card className="profile-top p-2 profile-top-card">
         <img className=" my-1 profile-top-logo" src={avatar} alt="" />
 
-        <h1 className="large">{name}</h1>
-        <p className="lead">
+        <h3 >{name}</h3>
+        <p >
           {status} at {company && <span>at {company}</span>}
         </p>
         <p>{location && <span>{location}</span>}</p>

@@ -13,16 +13,16 @@ const ProfileGitHub = ({ username, getGithubRepos, repos }) => {
   return (
     <>
       <div className="profile-github">
-        <h2 className="text-primary my-1">Github Repos </h2>
+        <h2 className=" my-1">Github Repos </h2>
         {repos === null ? (
           <Spinner></Spinner>
         ) : (
           repos.map((repo) => (
-            <Card key={repo._id} className="repo repo-color p-1 my-1">
+            <Card key={repo._id} className="repo p-1 my" >
               <div>
                 <h4>
                   <a href={repo.html_url} rel="noopener nooreferrer">
-                    {repo.name}
+                    {repo.name}{' '}<i class="fa fa-link" aria-hidden="true"></i>
                   </a>
                 </h4>
                 <p>{repo.description}</p>

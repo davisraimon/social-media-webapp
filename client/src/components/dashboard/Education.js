@@ -31,14 +31,14 @@ const Education = ({ education, deleteEducation }) => {
   ));
   return (
     <>
-      <h2 className="my-2">Education</h2>
+      <h2 className="my">Education</h2>
       <table className="table">
         <thead>
           <tr>
-            <th>School</th>
-            <th className="hide-sm">Degree</th>
-            <th className="hide-sm">Years</th>
-            <th />
+            <th className="width-100">School</th>
+            <th className="hide-sm width-200">Degree</th>
+            <th className="hide-sm width-200">Years</th>
+            <th className="width-100" />
           </tr>
         </thead>
         <tbody>{educations}</tbody>

@@ -29,16 +29,19 @@
 .card:hover {
   background-color: var(--hover-color);
 }
+.repo:hover {
+  background-color: var(--hover-color);
+}
 .text-cursive {
   font-family: sans-serif;
 }
 .profile-top-logo {
-  height: 150px;
-  width: 150px;
+  height: 110px;
+  width: 110px;
   border-radius: 50%;
 }
 .profile-top-card {
-  height: 400px;
+  height: 270px;
   background-color: var(--hover-color) !important;
 }
 .align-center {
@@ -56,9 +59,18 @@
 .border-radius {
   border-radius: 8px;
 }
-.comment-section-padding{
+.comment-section-padding {
   margin-left: 64px !important;
   margin-right: 64px !important;
+}
+.bot_mar-8 {
+  margin-bottom: 8px;
+}
+.width-100 {
+  width: 100px !important;
+}
+.width-200 {
+  width: 200px !important;
 }
 * {
   box-sizing: border-box;
@@ -95,7 +107,7 @@ img {
   overflow: hidden;
   padding: 0 2rem;
   margin-top: 6rem;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
 }
 
 /* Text Styles*/
@@ -345,7 +357,7 @@ button {
 
 .table th,
 .table td {
-  padding: 1rem;
+  padding: 0.3rem;
   text-align: left;
 }
 
@@ -423,7 +435,7 @@ button {
     "about about"
     "exp edu"
     "github github";
-  grid-gap: 1rem;
+  grid-gap: 0.6rem;
 }
 
 .profile-top {
@@ -499,9 +511,6 @@ button {
 
 .profile-github .repo {
   display: flex;
-}
-.repo-color {
-  background-color: var(--hover-color) !important;
 }
 
 .profile-github .repo > div:first-child {

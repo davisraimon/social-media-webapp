@@ -31,14 +31,14 @@ const Experience = ({ experience, deleteExperience }) => {
   ));
   return (
     <>
-      <h2 className="my-2">Experience</h2>
+      <h2 className="my">Experience</h2>
       <table className="table">
         <thead>
           <tr>
-            <th>Company</th>
-            <th className="hide-sm">Title</th>
-            <th className="hide-sm">Years</th>
-            <th />
+            <th className="width-100">Company</th>
+            <th className="hide-sm width-200">Title</th>
+            <th className="hide-sm width-200">Years</th>
+            <th className="width-100"/>
           </tr>
         </thead>
         <tbody>{experiences}</tbody>

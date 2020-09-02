@@ -13,12 +13,12 @@ const ProfileAbout = ({
     <Card className="profile-about p-2">
       {bio && (
         <>
-          <h2 className="text-primary">{name.trim().split(' ')[0]}'s Bio</h2>
+          <h3>{name.trim().split(" ")[0]}'s Bio</h3>
           <p>{bio}</p>
         </>
       )}
       <div className="line"></div>
-      <h2 className="text-primary">Skill Set</h2>
+      <h3>Skill Set</h3>
       <div className="skills">
         {skills.map((skill, index) => (
           <div className="p-1" key={index}>

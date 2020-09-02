@@ -17,8 +17,8 @@ const ProfileItem = ({
     <Card className="profile card">
       <img src={avatar} alt="" className="round-img"></img>
       <div>
-        <h2>{name}</h2>
-        <Typography component="span" color="textPrimary" variant="h6">
+        <h4>{name}</h4>
+        <Typography component="span" color="textSecondary" variant="h6">
           {status}
           {company && <span> at {company}</span>}
         </Typography>

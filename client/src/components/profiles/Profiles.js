@@ -15,8 +15,8 @@ const Profiles = ({ getProfiles, profile: { profiles }, loading }) => {
         <Spinner></Spinner>
       ) : (
         <>
-          <h1 className="large-text-primary">Developers</h1>
-          <p className="lead text-cursive">
+          <h3>Developers</h3>
+          <p className="bot_mar-8 text-cursive">
             <i className="fa fa-handshake-o" aria-hidden="true"></i> Browse and
             connect with developers
           </p>
