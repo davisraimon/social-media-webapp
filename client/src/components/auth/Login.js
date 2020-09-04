@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../../actions/auth";
-import logo from './logo.jpg'
+import logo from "./logo.jpg";
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setformData] = useState({
@@ -25,9 +25,11 @@ const Login = ({ login, isAuthenticated }) => {
   }
   return (
     <Fragment>
-      <div style={{ width: 400, margin: "auto" }}>
+      <div className="login-width">
         {/* <h1 className="large text-primary">Sign In</h1> */}
-        <div className='logo-div'><img src={logo} className='logo-size'></img></div>
+        <div className="logo-div">
+          <img src={logo} className="logo-size"></img>
+        </div>
         <p className="lead text-center">
           <i className="fas fa-user"></i> Sign into Your Account
         </p>
@@ -53,11 +55,13 @@ const Login = ({ login, isAuthenticated }) => {
               onChange={(e) => onChange(e)}
             />
           </div>
-          <input
-            type="submit"
-            className="btn btn-default width-400"
-            value="Login"
-          />
+          <div>
+            <input
+              type="submit"
+              className="btn btn-default width-400"
+              value="Login"
+            />
+          </div>
         </form>
         <p className="my-1 text-center">
           Don't have an account? <Link to="/register">Sign Up</Link>

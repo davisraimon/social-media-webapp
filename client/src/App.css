@@ -26,7 +26,10 @@
 .alert-div {
   border-radius: 8px;
 }
-
+.login-width {
+  width: 400px !important;
+  margin: auto;
+}
 .card:hover {
   background-color: var(--hover-color);
 }
@@ -567,11 +570,15 @@ button {
   .container {
     margin-top: 8rem;
   }
-
+  .login-width {
+    width: auto !important;
+  }
   .hide-sm {
     display: none;
   }
-
+  .width-400 {
+    width: 100%;
+  }
   /* Text Styles */
   .x-large {
     font-size: 3rem;

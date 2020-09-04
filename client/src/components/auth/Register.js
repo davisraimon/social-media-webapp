@@ -30,7 +30,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
   return (
     <Fragment>
-      <div style={{ width: 400, margin: "auto" }}>
+      <div className="login-width">
         <div className="logo-div">
           <img src={logo} className="logo-size"></img>
         </div>
@@ -58,7 +58,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               onChange={(e) => onChange(e)}
             />
             <small className="form-text">
-              This site uses Gravatar  So use Gravatar email for profile image
+              This site uses Gravatar So use Gravatar email for profile image
             </small>
           </div>
           <div className="form-group">
