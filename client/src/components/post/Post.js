@@ -17,7 +17,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
   ) : (
     <>
       <Link to="/posts" className="btn btn-light">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to posts
+        <i className="fa fa-arrow-left" aria-hidden="true"></i> Back to posts
       </Link>
       <PostItem showActions={false} post={post}></PostItem>
       <CommentForm post_id={post._id}></CommentForm>

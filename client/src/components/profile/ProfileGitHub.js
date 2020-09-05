@@ -7,7 +7,6 @@ import Card from "@material-ui/core/Card";
 
 const ProfileGitHub = ({ username, getGithubRepos, repos }) => {
   useEffect(() => {
-    console.log("one");
     getGithubRepos(username);
   }, [getGithubRepos, username]);
   return (
@@ -18,11 +17,12 @@ const ProfileGitHub = ({ username, getGithubRepos, repos }) => {
           <Spinner></Spinner>
         ) : (
           repos.map((repo) => (
-            <Card key={repo._id} className="repo p-1 my" >
+            <Card key={repo.id} className="repo p-1 my">
               <div>
                 <h4>
                   <a href={repo.html_url} rel="noopener nooreferrer">
-                    {repo.name}{' '}<i class="fa fa-link" aria-hidden="true"></i>
+                    {repo.name}{" "}
+                    <i className="fa fa-link" aria-hidden="true"></i>
                   </a>
                 </h4>
                 <p>{repo.description}</p>
@@ -59,7 +59,6 @@ const ProfileGitHub = ({ username, getGithubRepos, repos }) => {
 
 ProfileGitHub.propTypes = {
   username: PropTypes.string.isRequired,
-  getGitHubRepos: PropTypes.func.isRequired,
   repos: PropTypes.array.isRequired,
 };
 const mapStateToProps = (state) => ({

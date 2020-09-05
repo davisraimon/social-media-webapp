@@ -27,7 +27,7 @@ const Profile = ({
       ) : (
         <>
           <Link to="/profiles" className="btn btn-light top-mar-8">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to profiles
+            <i className="fa fa-arrow-left" aria-hidden="true"></i> Back to profiles
           </Link>
           {auth.isAuthenticated &&
           auth.loading === false &&

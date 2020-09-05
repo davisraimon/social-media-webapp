@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
+import { connect } from "react-redux";
 
 const ProfileItem = ({
   profile: {
@@ -12,7 +13,11 @@ const ProfileItem = ({
     company,
     skills,
   },
+  auth: { isAuthenticated, user },
 }) => {
+  const onConnectRequest = () => {
+    // @Todo Connection Request Handler
+  };
   return (
     <Card className="profile card">
       <img src={avatar} alt="" className="round-img"></img>
@@ -40,13 +45,16 @@ const ProfileItem = ({
         >
           View profile
         </Link>
-        <Link
-          to={`/profile/${_id}`}
-          className="btn btn-light"
-          style={{ marginTop: 8 }}
-        >
-          <i class="fa fa-envelope" aria-hidden="true"></i> Connect
-        </Link>
+        {isAuthenticated && (
+          <Link
+            onClick={onConnectRequest}
+            to=""
+            className="btn btn-light"
+            style={{ marginTop: 8 }}
+          >
+            <i className="fa fa-envelope" aria-hidden="true"></i> Connect
+          </Link>
+        )}
       </div>
       <ul>
         {skills.splice(0, 4).map((skill, index) => (
@@ -60,5 +68,7 @@ const ProfileItem = ({
 };
 
 ProfileItem.propTypes = { profile: PropTypes.object.isRequired };
-
-export default ProfileItem;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+export default connect(mapStateToProps, {})(ProfileItem);

@@ -238,7 +238,7 @@ const CreateProfile = ({ createProfile, history }) => {
         )}
 
         <Link className="btn btn-light my-1" to="/dashboard">
-          <i class="fa fa-arrow-left" aria-hidden="true"></i> Go Back
+          <i className="fa fa-arrow-left" aria-hidden="true"></i> Go Back
         </Link>
         <input type="submit" className="btn btn-primary my-1" />
       </form>

@@ -6,12 +6,12 @@ import { addPost } from "../../actions/post";
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState("");
   return (
-    <div class="post-form">
-      <div class="bg-primary p border-radius">
+    <div className="post-form">
+      <div className="bg-primary p border-radius">
         <h3>Say Something...</h3>
       </div>
       <form
-        class="form my"
+        className="form my"
         onSubmit={(e) => {
           e.preventDefault();
           addPost({ text });
@@ -28,7 +28,7 @@ const PostForm = ({ addPost }) => {
           value={text}
           onChange={(e) => setText(e.target.value)}
         ></textarea>
-        <input type="submit" class="btn btn-dark my" value="Post" />
+        <input type="submit" className="btn btn-dark my" value="Post" />
       </form>
     </div>
   );

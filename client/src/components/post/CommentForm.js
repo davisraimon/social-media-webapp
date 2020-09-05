@@ -7,8 +7,8 @@ const CommentForm = ({ addComment, post_id }) => {
   const [text, setText] = useState("");
   return (
     <>
-      <div class="post-form">
-        <div class="bg-primary p border-radius">
+      <div className="post-form">
+        <div className="bg-primary p border-radius">
           <h4>Leave a comment...</h4>
         </div>
         <form
@@ -29,7 +29,7 @@ const CommentForm = ({ addComment, post_id }) => {
             value={text}
             onChange={(e) => setText(e.target.value)}
           ></textarea>
-          <input type="submit" class="btn btn-dark my" value="Comment" />
+          <input type="submit" className="btn btn-dark my" value="Comment" />
         </form>
       </div>
     </>
